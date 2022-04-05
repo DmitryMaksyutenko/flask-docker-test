@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+
+  app:
+    env_file:
+      - .env
+    build:
+      context: ../..
+      dockerfile: local.Dockerfile
+    ports:
+      - "8080:8080"
+    command: pdm run python run.py
